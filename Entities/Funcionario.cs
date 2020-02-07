@@ -16,22 +16,5 @@ namespace Entities
         public string Telefone { get; set; }
         public string Senha { get; set; }
         public bool EhAtivo { get; set; }
-
-        public Funcionario()
-        {
-
-        }
-
-        public Funcionario(int iD, string nome, string email, string cPF, DateTime dataNascimento, string telefone, string senha, bool ehAtivo)
-        {
-            ID = iD;
-            Nome = nome ?? throw new ArgumentNullException(nameof(nome));
-            Email = email ?? throw new ArgumentNullException(nameof(email));
-            CPF = cPF ?? throw new ArgumentNullException(nameof(cPF));
-            DataNascimento = dataNascimento;
-            Telefone = telefone ?? throw new ArgumentNullException(nameof(telefone));
-            Senha = senha ?? throw new ArgumentNullException(nameof(senha));
-            EhAtivo = ehAtivo;
-        }
     }
 }

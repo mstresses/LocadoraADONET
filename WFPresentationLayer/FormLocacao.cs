@@ -1,4 +1,5 @@
-﻿using BusinessLogicalLayer;
+﻿using BLL;
+using BusinessLogicalLayer;
 using BusinessLogicalLayer.Security;
 using Entities;
 using System;
@@ -34,8 +35,8 @@ namespace WFPresentationLayer
                 this.txtClienteNome.Text = cliente.Nome;
                 this.txtClienteCPF.Text = cliente.CPF;
             }
-           
-        }
+            
+    }
 
         private BindingList<Filme> listFilmesSelecionados = new BindingList<Filme>();
 
@@ -69,17 +70,9 @@ namespace WFPresentationLayer
             locacao.Filmes = listFilmesSelecionados.ToList();
             locacao.FoiPago = chkFoiPago.Checked;
             locacao.Funcionario = User.FuncionarioLogado;
-
-            LocacaoBLL bll = new LocacaoBLL();
-            Response response = bll.EfetuarLocacao(locacao);
-            if (response.Sucesso)
-            {
-                MessageBox.Show("Locação efetuada com sucesso!");
-            }
-            else
-            {
-                MessageBox.Show(response.GetErrorMessage());
-            }
+            new LocacaoService().Insert(locacao);
+            
+            MessageBox.Show("Locação efetuada com sucesso!");
         }
     }
 }

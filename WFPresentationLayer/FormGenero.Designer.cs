@@ -42,7 +42,7 @@
             this.txtGenero.Location = new System.Drawing.Point(45, 107);
             this.txtGenero.Margin = new System.Windows.Forms.Padding(5, 10, 5, 10);
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(334, 26);
+            this.txtGenero.Size = new System.Drawing.Size(334, 30);
             this.txtGenero.TabIndex = 5;
             // 
             // label1
@@ -51,7 +51,7 @@
             this.label1.Location = new System.Drawing.Point(46, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Nome";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -76,6 +76,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(483, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(435, 269);
             this.dataGridView1.TabIndex = 6;
@@ -104,7 +105,7 @@
             // 
             // FormGenero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(947, 420);
             this.Controls.Add(this.btnExcluir);

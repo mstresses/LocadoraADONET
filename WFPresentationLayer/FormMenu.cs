@@ -38,10 +38,10 @@ namespace WFPresentationLayer
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormFuncionario frm = new FormFuncionario();
-            this.Hide();
-            frm.ShowDialog();
-            this.Show();
+            //FormFuncionario frm = new FormFuncionario();
+            //this.Hide();
+            //frm.ShowDialog();
+            //this.Show();
         }
 
         private void FormMenu_Load(object sender, EventArgs e)

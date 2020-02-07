@@ -16,10 +16,6 @@ namespace Entities
         public int Duracao { get; set; }
         public int GeneroID { get; set; }
 
-        /// <summary>
-        /// Calcula a devolução do filme
-        /// </summary>
-        /// <returns>Retorna em HORAS o tempo de devolução</returns>
         public int CalcularDevolucao()
         {
             if (this.DataLancamento.Year == DateTime.Now.Year)
@@ -55,21 +51,6 @@ namespace Entities
                 return 6;
             }
             return 4;
-        }
-
-        public Filme()
-        {
-
-        }
-
-        public Filme(int iD, string nome, DateTime dataLancamento, Classificacao classificacao, int duracao, int generoID)
-        {
-            ID = iD;
-            Nome = nome;
-            DataLancamento = dataLancamento;
-            Classificacao = classificacao;
-            Duracao = duracao;
-            GeneroID = generoID;
         }
     }
 }
