@@ -26,15 +26,16 @@ namespace WFPresentationLayer
         {
             LocadoraDbContext db = new LocadoraDbContext();
             List<Genero> generos = db.Generos.Where(genero => genero.Nome != null).ToList();
-            cmbGeneros.DataSource = db.Generos.Where GetData().Data;//<- Este .Data retorna uma List<Genero>
+            cmbGeneros.DataSource = db.Generos;
             cmbGeneros.DisplayMember = "Nome";
             cmbGeneros.ValueMember = "ID";
             cmbClassificacao.DataSource = Enum.GetValues(typeof(Classificacao));
-            //dataGridView1.DataSource = .GetFilmes().Data;
+            dataGridView1.DataSource = db.Filmes;
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            LocadoraDbContext db = new LocadoraDbContext();
             Filme filme = new Filme();
             filme.Duracao = Convert.ToInt32(txtDuracao.Text);
             filme.Classificacao = (Classificacao)cmbClassificacao.SelectedItem;

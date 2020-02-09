@@ -12,3 +12,17 @@ C:\Users\900192\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DAO.csproj
 C:\Users\900192\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\900192\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 C:\Users\900192\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\Entities.dll.config
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\Entities.dll
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\Entities.pdb
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\Entities.dll.config
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\mstre\Source\Repos\LocadoraADONET\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
