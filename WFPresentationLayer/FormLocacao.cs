@@ -21,6 +21,21 @@ namespace WFPresentationLayer
         public FormLocacao()
         {
             InitializeComponent();
+            dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            DataResponse<Cliente> response = svc.GetData();
+            if (response.Sucesso)
+            {
+                dataGridView1.DataSource = response.Data;
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
+        }
+        ClienteService svc = new ClienteService();
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnPesquisaCLiente_Click(object sender, EventArgs e)
