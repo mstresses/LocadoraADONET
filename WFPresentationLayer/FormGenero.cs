@@ -19,12 +19,20 @@ namespace WFPresentationLayer
         public FormGenero()
         {
             InitializeComponent();
-            dataGridView1.DataSource = bll.GetData().Data;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            DataResponse<Genero> response = svc.GetData();
+            if (response.Sucesso)
+            {
+                dataGridView1.DataSource = response.Data;
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
 
         int idGeneroASerAtualizadoExcluido = 0;
-        GeneroService bll = new GeneroService();
+        GeneroService svc = new GeneroService();
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
         }
@@ -37,7 +45,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = svc.GetData().Data;
             }
             else
             {

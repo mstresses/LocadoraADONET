@@ -1,4 +1,5 @@
-﻿using BusinessLogicalLayer;
+﻿using BLL;
+using BusinessLogicalLayer;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace WFPresentationLayer
 
         private void FormPesquisaFIlme_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.DataSource = new FilmeService().GetData().Data;
         }
     }
 }

@@ -12,6 +12,7 @@ using Entities.Enums;
 using Entities;
 using BLL;
 using DAO;
+using Entities.ResultSets;
 
 namespace WFPresentationLayer
 {
@@ -22,6 +23,9 @@ namespace WFPresentationLayer
             InitializeComponent();
         }
 
+        FilmeService svcF = new FilmeService();
+        GeneroService svc = new GeneroService();
+        private int idFilmeASerAtualizadoExcluido = 0;
         private void FormFilme_Load(object sender, EventArgs e)
         {
             LocadoraDbContext db = new LocadoraDbContext();
@@ -55,29 +59,79 @@ namespace WFPresentationLayer
 
         private void cmbFIltro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cmbFIltro.Text == "Nome")
+            {
+                cmbPesquisa.Visible = false;
+                txtPesquisa.Visible = true;
+            }
+            else
+            {
+                if (cmbFIltro.Text == "Gênero")
+                {
+                    cmbPesquisa.DataSource = null;
+                    cmbPesquisa.DataSource = svcF.GetData().Data;//<- Este .Data retorna uma List<Genero>
+                    cmbPesquisa.DisplayMember = "Nome";
+                    cmbPesquisa.ValueMember = "ID";
+                }
+                else
+                {
+                    cmbPesquisa.DataSource = null;
+                    cmbPesquisa.DataSource = Enum.GetValues(typeof(Classificacao));
+                }
+                cmbPesquisa.Visible = true;
+                txtPesquisa.Visible = false;
+            }
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            dataGridView1.DataSource = null;
+            DataResponse<FilmeResultSet> response = null;
 
+            if (cmbFIltro.Text == "Nome")
+            {
+                response = svcF.GetFilmesByName(txtPesquisa.Text);
+            }
+            else if (cmbFIltro.Text == "Gênero")
+            {
+                response = svcF.GetFilmesByGenero(((Genero)cmbPesquisa.SelectedItem).ID);
+            }
+            else
+            {
+                response = svcF.GetFilmesByClassificacao(((Classificacao)cmbPesquisa.SelectedItem));
+            }
+            if (response.Sucesso)
+            {
+                if (response.Data.Count == 0)
+                {
+                    MessageBox.Show("Não foram encontrados dados!");
+                }
+                else
+                {
+                    dataGridView1.DataSource = response.Data;
+                }
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FilmeResultSet result = (FilmeResultSet)dataGridView1.SelectedRows[0].DataBoundItem;
-            DataResponse<Filme> response = filmeBLL.GetByID(result.ID);
-            if (response.Sucesso)
-            {
-                Filme filme = response.Data[0];
-                idFilmeASerAtualizadoExcluido = filme.ID;
-                txtDuracao.Text = filme.Duracao.ToString();
-                txtNome.Text = filme.Nome;
-                dtpLancamento.Value = filme.DataLancamento;
+            //FilmeResultSet result = (FilmeResultSet)dataGridView1.SelectedRows[0].DataBoundItem;
+            //DataResponse<Filme> response = svcF.GetByID(result.ID);
+            //if (response.Sucesso)
+            //{
+            //    Filme filme = response.Data[0];
+            //    idFilmeASerAtualizadoExcluido = filme.ID;
+            //    txtDuracao.Text = filme.Duracao.ToString();
+            //    txtNome.Text = filme.Nome;
+            //    dtpLancamento.Value = filme.DataLancamento;
 
-                cmbClassificacao.SelectedItem = filme.Classificacao;
-                cmbGeneros.SelectedValue = filme.GeneroID;
-            }
+            //    cmbClassificacao.SelectedItem = filme.Classificacao;
+            //    cmbGeneros.SelectedValue = filme.GeneroID;
+            //}
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

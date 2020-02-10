@@ -60,6 +60,8 @@
     <Compile Include="Genero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response.cs" />
+    <Compile Include="Results\FilmeResultSet.cs" />
+    <Compile Include="Results\IFilmeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

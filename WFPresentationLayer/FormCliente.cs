@@ -31,7 +31,7 @@ namespace WFPresentationLayer
             }
         }
         int idClienteASerAtualizadoExcluido = 0;
-        ClienteService svc = new ClienteService()
+        ClienteService svc = new ClienteService();
 
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -60,7 +60,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = svc.GetData().Data;
             }
             else
             {

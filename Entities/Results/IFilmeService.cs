@@ -1,5 +1,4 @@
-﻿using Entities;
-using Entities.Enums;
+﻿using Entities.Enums;
 using Entities.ResultSets;
 using System;
 using System.Collections.Generic;
@@ -7,16 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Interfaces
+namespace Entities.Results
 {
-    public interface IFilmeService
+    interface IFilmeService
     {
-        Response Insert(Filme filme);
-        Response Update(Filme filme);
-        Response Delete(Filme filme);
-        Response Validate(Filme filme);
-        DataResponse<Genero> GetData();
-        DataResponse<Genero> GetByID(int id);
         DataResponse<FilmeResultSet> GetFilmes();
         DataResponse<FilmeResultSet> GetFilmesByName(string nome);
         DataResponse<FilmeResultSet> GetFilmesByGenero(int genero);
