@@ -9,9 +9,9 @@ namespace BLL.Interfaces
 {
     public interface IClienteService
     {
-        void Insert(Cliente cliente);
-        void Update(Cliente cliente);
-        void Delete(Cliente cliente);
-        void Validate(Cliente cliente);
+        Response Insert(Cliente cliente);
+        Response Update(Cliente cliente);
+        Response Delete(Cliente cliente);
+        Response Validate(Cliente cliente);
     }
 }

@@ -9,9 +9,10 @@ namespace BLL.Interfaces
 {
     public interface IGeneroService
     {
-        void Insert(Genero genero);
-        void Update(Genero genero);
-        void Delete(Genero genero);
-        void Validate(Genero genero);
+        Response Insert(Genero genero);
+        Response Update(Genero genero);
+        Response Delete(Genero genero);
+        Response Validate(Genero genero);
+        DataResponse<Genero> GetData();
     }
 }

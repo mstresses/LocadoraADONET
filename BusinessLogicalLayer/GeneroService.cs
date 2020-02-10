@@ -12,37 +12,64 @@ namespace BLL
 {
     public class GeneroService : IGeneroService
     {
-        public void Insert(Genero genero)
+        private LocadoraDbContext dao = new LocadoraDbContext();
+        public Response Insert(Genero genero)
         {
+            Response response = Validate(genero);
             using (LocadoraDbContext db = new LocadoraDbContext())
             {
                 db.Generos.Add(genero);
                 db.SaveChanges();
             }
+            if (response.Erros.Count > 0)
+            {
+                response.Sucesso = false;
+                return response;
+            }
+            return response;
         }
 
-        public void Update(Genero genero)
+        public Response Update(Genero genero)
         {
+            Response response = Validate(genero);
             using (LocadoraDbContext db = new LocadoraDbContext())
             {
                 Genero generoASerAtualizado = new Genero();
                 db.Entry<Genero>(generoASerAtualizado).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
+            if (response.Erros.Count > 0)
+            {
+                response.Sucesso = false;
+                return response;
+            }
+            return response;
         }
 
-        public void Delete(Genero genero)
+        public Response Delete(Genero genero)
         {
+            Response response = new Response();
             using (LocadoraDbContext db = new LocadoraDbContext())
             {
                 Genero generoASerExcluido = new Genero();
                 db.Entry<Genero>(generoASerExcluido).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
             }
+            if (genero.ID <= 0)
+            {
+                response.Erros.Add("ID do cliente não foi informado.");
+            }
+            if (response.Erros.Count != 0)
+            {
+                response.Sucesso = false;
+                return response;
+            }
+            return response;
         }
 
-        public void Validate(Genero genero)
+        public Response Validate(Genero genero)
         {
+            Response response = new Response();
             using (LocadoraDbContext db = new LocadoraDbContext())
             {
                 if (string.IsNullOrWhiteSpace(genero.Nome))
@@ -61,7 +88,13 @@ namespace BLL
                     }
                 }
                 db.SaveChanges();
+                return response;
             }
+        }
+
+        public DataResponse<Genero> GetData()
+        {
+            throw new Exception();
         }
     }
 }

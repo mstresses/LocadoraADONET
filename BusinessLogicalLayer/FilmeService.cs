@@ -71,5 +71,25 @@ namespace BLL
                 db.SaveChanges();
             }
         }
+
+        Response IFilmeService.Insert(Filme filme)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response IFilmeService.Update(Filme filme)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response IFilmeService.Delete(Filme filme)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response IFilmeService.Validate(Filme filme)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

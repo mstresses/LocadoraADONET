@@ -9,9 +9,9 @@ namespace BLL.Interfaces
 {
     public interface IFilmeService
     {
-        void Insert(Filme filme);
-        void Update(Filme filme);
-        void Delete(Filme filme);
-        void Validate(Filme filme);
+        Response Insert(Filme filme);
+        Response Update(Filme filme);
+        Response Delete(Filme filme);
+        Response Validate(Filme filme);
     }
 }

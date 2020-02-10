@@ -9,8 +9,9 @@ namespace BLL.Interfaces
 {
     public interface ILocacaoService
     {
-        void Insert(Locacao locacao);
-        void Update(Locacao locacao);
-        void Delete(Locacao locacao);
+        Response Insert(Locacao locacao);
+        Response Update(Locacao locacao);
+        Response Delete(Locacao locacao);
+        Response Validate(Locacao locacao);
     }
 }

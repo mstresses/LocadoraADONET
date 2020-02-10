@@ -44,5 +44,25 @@ namespace BLL
         {
             throw new NotImplementedException();
         }
+
+        Response IFuncionarioService.Insert(Funcionario funcionario)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response IFuncionarioService.Update(Funcionario funcionario)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response IFuncionarioService.Delete(Funcionario funcionario)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response IFuncionarioService.Validate(Funcionario funcionario)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

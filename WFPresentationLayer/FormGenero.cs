@@ -1,5 +1,6 @@
 ﻿using BLL;
 using BusinessLogicalLayer;
+using DAO;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,12 @@ namespace WFPresentationLayer
         public FormGenero()
         {
             InitializeComponent();
-            //dataGridView1.DataSource = bll.GetData().Data;
+            dataGridView1.DataSource = bll.GetData().Data;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
         }
 
         int idGeneroASerAtualizadoExcluido = 0;
-
+        GeneroService bll = new GeneroService();
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
         }
@@ -33,6 +34,17 @@ namespace WFPresentationLayer
             Genero genero = new Genero();
             genero.Nome = txtGenero.Text;
             new GeneroService().Insert(genero);
+
+            Response response = new GeneroService().Insert(genero);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Cadastrado com sucesso!");
+                //dataGridView1.DataSource = bll.GetData().Data;
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

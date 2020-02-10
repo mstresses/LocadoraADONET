@@ -9,9 +9,9 @@ namespace BLL.Interfaces
 {
     public interface IFuncionarioService
     {
-        void Insert(Funcionario funcionario);
-        void Update(Funcionario funcionario);
-        void Delete(Funcionario funcionario);
-        void Validate(Funcionario funcionario);
+        Response Insert(Funcionario funcionario);
+        Response Update(Funcionario funcionario);
+        Response Delete(Funcionario funcionario);
+        Response Validate(Funcionario funcionario);
     }
 }

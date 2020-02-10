@@ -47,5 +47,25 @@ namespace BLL
                 db.SaveChanges();
             }
         }
+
+        Response ILocacaoService.Insert(Locacao locacao)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response ILocacaoService.Update(Locacao locacao)
+        {
+            throw new NotImplementedException();
+        }
+
+        Response ILocacaoService.Delete(Locacao locacao)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Response Validate(Locacao locacao)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

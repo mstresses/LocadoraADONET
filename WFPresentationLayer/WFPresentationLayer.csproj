@@ -68,7 +68,9 @@
     <Compile Include="FormFilme.Designer.cs">
       <DependentUpon>FormFilme.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFuncionario.cs" />
+    <Compile Include="FormFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormFuncionario.Designer.cs">
       <DependentUpon>FormFuncionario.cs</DependentUpon>
     </Compile>
