@@ -3,7 +3,6 @@ using DAO;
 using Entities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,32 +64,6 @@ namespace BLL
         }
 
         public Response Validate(Locacao locacao)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataResponse<Locacao> GetData()
-        {
-            using (LocadoraDbContext db = new LocadoraDbContext())
-            {
-                DataResponse<Locacao> response = new DataResponse<Locacao>();
-                try
-                {
-                    response.Data = db.Locacoes.ToList();
-                    response.Sucesso = true;
-                    return response;
-                }
-                catch (Exception ex)
-                {
-                    File.WriteAllText("log.txt", ex.Message);
-                    response.Sucesso = false;
-                    response.Erros.Add("Erro no banco de dados, contate o adm.");
-                    return response;
-                }
-            }
-        }
-
-        public DataResponse<Cliente> GetByID(int id)
         {
             throw new NotImplementedException();
         }

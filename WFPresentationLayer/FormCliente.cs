@@ -31,7 +31,7 @@ namespace WFPresentationLayer
             }
         }
         int idClienteASerAtualizadoExcluido = 0;
-        ClienteService svc = new ClienteService();
+        ClienteService svc = new ClienteService()
 
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
