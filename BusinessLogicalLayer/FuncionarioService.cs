@@ -131,5 +131,16 @@ namespace BLL
         {
             throw new NotImplementedException();
         }
+
+        public DataResponse<Funcionario> Autenticar(string email, string senha)
+        {
+            senha = HashUtils.HashPassword(senha);
+            DataResponse<Funcionario> response = svcfunc.Autenticar(email, senha); //CORRIGIR AMANHÃ//
+            if (response.Sucesso)
+            {
+                User.FuncionarioLogado = response.Data[0];
+            }
+            return response;
+        }
     }
 }

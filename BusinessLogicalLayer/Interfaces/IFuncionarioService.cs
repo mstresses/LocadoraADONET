@@ -15,5 +15,6 @@ namespace BLL.Interfaces
         Response Validate(Funcionario funcionario);
         DataResponse<Funcionario> GetData();
         DataResponse<Funcionario> GetByID(int id);
+        DataResponse<Funcionario> Autenticar(string email, string senha);
     }
 }

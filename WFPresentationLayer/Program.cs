@@ -16,7 +16,7 @@ namespace WFPresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormGenero());
+            Application.Run(new FormFuncionario());
         }
     }
 }
