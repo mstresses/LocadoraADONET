@@ -3,6 +3,7 @@ using DAO;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -96,6 +97,32 @@ namespace BLL
                 db.SaveChanges();
                 return response;
             }
+        }
+
+        public DataResponse<Filme> GetData()
+        {
+            using (LocadoraDbContext db = new LocadoraDbContext())
+            {
+                DataResponse<Filme> response = new DataResponse<Filme>();
+                try
+                {
+                    response.Data = db.Filmes.ToList();
+                    response.Sucesso = true;
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    File.WriteAllText("log.txt", ex.Message);
+                    response.Sucesso = false;
+                    response.Erros.Add("Erro no banco de dados, contate o adm.");
+                    return response;
+                }
+            }
+        }
+
+        public DataResponse<Filme> GetByID(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
