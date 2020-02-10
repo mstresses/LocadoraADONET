@@ -19,7 +19,7 @@ namespace WFPresentationLayer
         public FormGenero()
         {
             InitializeComponent();
-            //dataGridView1.DataSource = bll.GetData().Data;
+            dataGridView1.DataSource = bll.GetData().Data;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
         }
 
@@ -37,7 +37,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                //dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = bll.GetData().Data;
             }
             else
             {

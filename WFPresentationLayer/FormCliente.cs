@@ -1,4 +1,5 @@
 ﻿using BLL;
+using BLL.Interfaces;
 using BusinessLogicalLayer;
 using Entities;
 using System;
@@ -19,13 +20,32 @@ namespace WFPresentationLayer
         {
             InitializeComponent();
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
-            //dataGridView1.DataSource = 
+            DataResponse<Cliente> response = svc.GetData();
+            if (response.Sucesso)
+            {
+                dataGridView1.DataSource = response.Data;
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
         int idClienteASerAtualizadoExcluido = 0;
+        ClienteService svc = new ClienteService()
 
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            Cliente result = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
+            DataResponse<Cliente> response = svc.GetByID(result.ID);
+            if (response.Sucesso)
+            {
+                Cliente cliente = response.Data[0];
+                idClienteASerAtualizadoExcluido = cliente.ID;
+                txtNome.Text = cliente.Nome;
+                txtCPF.Text = cliente.CPF;
+                txtEmail.Text = cliente.Email;
+                dtpDataNascimento.Value = cliente.DataNascimento;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,12 +55,12 @@ namespace WFPresentationLayer
             cliente.CPF = txtCPF.Text;
             cliente.Email = txtEmail.Text;
             cliente.DataNascimento = dtpDataNascimento.Value;
-            new ClienteService().Insert(cliente);
+            svc.Insert(cliente);
             Response response = new ClienteService().Insert(cliente);
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                //dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = bll.GetData().Data;
             }
             else
             {
@@ -56,7 +76,7 @@ namespace WFPresentationLayer
             cliente.Email = txtEmail.Text;
             cliente.CPF = txtCPF.Text;
             cliente.DataNascimento = dtpDataNascimento.Value;
-            Response response = new ClienteService().Update(cliente);
+            Response response = svc.Update(cliente);
             if (response.Sucesso)
             {
                 MessageBox.Show("Atualizado com sucesso.");
@@ -70,7 +90,7 @@ namespace WFPresentationLayer
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
-            Response response = new ClienteService().Delete(cliente);
+            Response response = svc.Delete(cliente);
             if (response.Sucesso)
             {
                 MessageBox.Show("Excluído com sucesso.");

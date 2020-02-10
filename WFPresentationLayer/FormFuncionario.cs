@@ -18,25 +18,25 @@ namespace WFPresentationLayer
         public FormFuncionario()
         {
             InitializeComponent();
-            //dataGridView1.DataSource = bll.GetData().Data;
+            dataGridView1.DataSource = bll.GetData().Data;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
         }
         int idFuncionarioASerAtualizadoExcluido = 0;
         private FuncionarioService bll = new FuncionarioService();
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Funcionario result = (Funcionario)dataGridView1.SelectedRows[0].DataBoundItem;
-            //DataResponse<Funcionario> response = bll.GetByID(result.ID);
-            //if (response.Sucesso)
-            //{
-            //    Funcionario funcionario = response.Data[0];
-            //    idFuncionarioASerAtualizadoExcluido = funcionario.ID;
-            //    txtNome.Text = funcionario.Nome;
-            //    txtEmail.Text = funcionario.Email;
-            //    txtCpf.Text = funcionario.CPF;
-            //    txtTelefone.Text = funcionario.Telefone;
-            //    dtpDataNascimento.Value = funcionario.DataNascimento;
-            //}
+            Funcionario result = (Funcionario)dataGridView1.SelectedRows[0].DataBoundItem;
+            DataResponse<Funcionario> response = bll.GetByID(result.ID);
+            if (response.Sucesso)
+            {
+                Funcionario funcionario = response.Data[0];
+                idFuncionarioASerAtualizadoExcluido = funcionario.ID;
+                txtNome.Text = funcionario.Nome;
+                txtEmail.Text = funcionario.Email;
+                txtCpf.Text = funcionario.CPF;
+                txtTelefone.Text = funcionario.Telefone;
+                dtpDataNascimento.Value = funcionario.DataNascimento;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                //dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = bll.GetData().Data;
             }
             else
             {
@@ -90,7 +90,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Funionário atualizado com sucesso.");
-                //dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = bll.GetData().Data;
             }
             else
             {
@@ -100,16 +100,16 @@ namespace WFPresentationLayer
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            //Response response = new FuncionarioService().Delete(funcionario);
-            //if (response.Sucesso)
-            //{
-            //    MessageBox.Show("Funcionário demitido com sucesso!");
-            //    dataGridView1.DataSource = bll.GetData().Data;
-            //}
-            //else
-            //{
-            //    MessageBox.Show(response.GetErrorMessage());
-            //}
+            Response response = new FuncionarioService().Delete(funcionario);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Funcionário demitido com sucesso!");
+                dataGridView1.DataSource = bll.GetData().Data;
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
     }
 }

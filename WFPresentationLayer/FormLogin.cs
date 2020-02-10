@@ -21,19 +21,19 @@ namespace WFPresentationLayer
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //DataResponse<Funcionario> response = funcionarioBLL.Autenticar(txtEmail.Text, txtSenha.Text);
-            //if (response.Sucesso)
-            //{
-            //    FormMenu frmMenu = new FormMenu();
-            //    this.Hide();
-            //    frmMenu.ShowDialog();
-            //    //Esta linha só executa quando o FormMenu for fechado
-            //    this.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show(response.GetErrorMessage());
-            //}
+            DataResponse<Funcionario> response = funcionarioBLL.Autenticar(txtEmail.Text, txtSenha.Text);
+            if (response.Sucesso)
+            {
+                FormMenu frmMenu = new FormMenu();
+                this.Hide();
+                frmMenu.ShowDialog();
+                //Esta linha só executa quando o FormMenu for fechado
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
     }
 }

@@ -20,3 +20,14 @@ C:\Users\mstre\Source\Repos\LocadoraADONET\Entities\obj\Debug\Entity.csprojAssem
 C:\Users\mstre\Source\Repos\LocadoraADONET\Entities\obj\Debug\Entity.csproj.CopyComplete
 C:\Users\mstre\Source\Repos\LocadoraADONET\Entities\obj\Debug\Entities.dll
 C:\Users\mstre\Source\Repos\LocadoraADONET\Entities\obj\Debug\Entities.pdb
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\Entities.dll.config
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\Entities.dll
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\Entities.pdb
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\EntityFramework.dll
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\EntityFramework.xml
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\obj\Debug\Entity.csprojAssemblyReference.cache
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\obj\Debug\Entity.csproj.CopyComplete
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\obj\Debug\Entities.dll
+C:\Users\900192\Source\Repos\LocadoraADONETT\Entities\obj\Debug\Entities.pdb

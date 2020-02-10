@@ -12,6 +12,8 @@ namespace BLL.Interfaces
         Response Insert(Cliente cliente);
         Response Update(Cliente cliente);
         Response Delete(Cliente cliente);
+        DataResponse<Cliente> GetData();
+        DataResponse<Cliente> GetByID(int id);
         Response Validate(Cliente cliente);
     }
 }

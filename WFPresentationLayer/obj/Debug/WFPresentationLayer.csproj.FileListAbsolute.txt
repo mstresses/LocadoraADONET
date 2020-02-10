@@ -132,3 +132,17 @@ C:\Users\mstre\Source\Repos\LocadoraADONET\WFPresentationLayer\obj\Debug\WFPrese
 C:\Users\mstre\Source\Repos\LocadoraADONET\WFPresentationLayer\obj\Debug\WFPresentationLayer.csproj.CopyComplete
 C:\Users\mstre\Source\Repos\LocadoraADONET\WFPresentationLayer\obj\Debug\WFPresentationLayer.exe
 C:\Users\mstre\Source\Repos\LocadoraADONET\WFPresentationLayer\obj\Debug\WFPresentationLayer.pdb
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.csprojAssemblyReference.cache
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormCliente.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormFilme.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormFuncionario.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormGenero.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormLocacao.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormLogin.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormMenu.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormPesquisaCliente.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.FormPesquisaFIlme.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.Properties.Resources.resources
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.csproj.GenerateResource.cache
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.exe
+C:\Users\900192\Source\Repos\LocadoraADONETT\WFPresentationLayer\obj\Debug\WFPresentationLayer.pdb

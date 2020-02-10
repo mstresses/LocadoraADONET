@@ -3,6 +3,7 @@ using DAO;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -90,9 +91,7 @@ namespace BLL
                 }
                 else
                 {
-                    //Remove espaços em branco no começo e no final da string.
                     cliente.Email = cliente.Email.Trim();
-                    //Remove espaços extras entre as palavras, ex: "A      B", ficaria "A B".
                     cliente.Email = Regex.Replace(cliente.Email, @"\s+", " ");
                     if (cliente.Email.Length < 5 || cliente.Email.Length > 50)
                     {
@@ -102,6 +101,32 @@ namespace BLL
                 db.SaveChanges();
                 return response;
             }
+        }
+
+        public DataResponse<Cliente> GetData()
+        {
+            using (LocadoraDbContext db = new LocadoraDbContext())
+            {
+                DataResponse<Cliente> response = new DataResponse<Cliente>();
+                try
+                {
+                    response.Data = db.Clientes.ToList();
+                    response.Sucesso = true;
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    File.WriteAllText("log.txt", ex.Message);
+                    response.Sucesso = false;
+                    response.Erros.Add("Erro no banco de dados, contate o adm.");
+                    return response;
+                }
+            }
+        }
+
+        public DataResponse<Cliente> GetByID(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
