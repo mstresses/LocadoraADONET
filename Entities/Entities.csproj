@@ -47,13 +47,10 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Filme.cs" />
     <Compile Include="Funcionario.cs" />
-    <Compile Include="IFilmeService.cs" />
-    <Compile Include="IFuncionarioService.cs" />
     <Compile Include="ILocacaoService.cs" />
     <Compile Include="Locacao.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Genero.cs" />
-    <Compile Include="IEntityCRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultSets\FilmeResultSet.cs" />
   </ItemGroup>

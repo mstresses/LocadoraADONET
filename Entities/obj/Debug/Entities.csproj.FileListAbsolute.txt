@@ -3,8 +3,3 @@ C:\Users\hbsis\source\repos\XXXLocadora\Entities\bin\Debug\Entities.pdb
 C:\Users\hbsis\source\repos\XXXLocadora\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
 C:\Users\hbsis\source\repos\XXXLocadora\Entities\obj\Debug\Entities.dll
 C:\Users\hbsis\source\repos\XXXLocadora\Entities\obj\Debug\Entities.pdb
-C:\Users\annez\Documents\C#\GitHub\LocadoraADONET\Entities\bin\Debug\Entities.dll
-C:\Users\annez\Documents\C#\GitHub\LocadoraADONET\Entities\bin\Debug\Entities.pdb
-C:\Users\annez\Documents\C#\GitHub\LocadoraADONET\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
-C:\Users\annez\Documents\C#\GitHub\LocadoraADONET\Entities\obj\Debug\Entities.dll
-C:\Users\annez\Documents\C#\GitHub\LocadoraADONET\Entities\obj\Debug\Entities.pdb
