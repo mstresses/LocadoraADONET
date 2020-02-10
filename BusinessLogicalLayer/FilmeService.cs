@@ -123,7 +123,7 @@ namespace BLL
             }
         }
 
-        public DataResponse<Genero> GetByID(int id)
+        public DataResponse<Filme> GetByID(int id)
         {
             return svcF.GetByID(id);
         }
@@ -161,6 +161,12 @@ namespace BLL
         public DataResponse<FilmeResultSet> GetFilmesByClassificacao(Classificacao classificacao)
         {
             return svcF.GetFilmesByClassificacao(classificacao);
+        }
+
+
+        DataResponse<Filme> IFilmeService.GetData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

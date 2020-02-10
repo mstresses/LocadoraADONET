@@ -119,19 +119,19 @@ namespace WFPresentationLayer
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //FilmeResultSet result = (FilmeResultSet)dataGridView1.SelectedRows[0].DataBoundItem;
-            //DataResponse<Filme> response = svcF.GetByID(result.ID);
-            //if (response.Sucesso)
-            //{
-            //    Filme filme = response.Data[0];
-            //    idFilmeASerAtualizadoExcluido = filme.ID;
-            //    txtDuracao.Text = filme.Duracao.ToString();
-            //    txtNome.Text = filme.Nome;
-            //    dtpLancamento.Value = filme.DataLancamento;
+            FilmeResultSet result = (FilmeResultSet)dataGridView1.SelectedRows[0].DataBoundItem;
+            DataResponse<Filme> response = svcF.GetByID(result.ID);
+            if (response.Sucesso)
+            {
+                Filme filme = response.Data[0];
+                idFilmeASerAtualizadoExcluido = filme.ID;
+                txtDuracao.Text = filme.Duracao.ToString();
+                txtNome.Text = filme.Nome;
+                dtpLancamento.Value = filme.DataLancamento;
 
-            //    cmbClassificacao.SelectedItem = filme.Classificacao;
-            //    cmbGeneros.SelectedValue = filme.GeneroID;
-            //}
+                cmbClassificacao.SelectedItem = filme.Classificacao;
+                cmbGeneros.SelectedValue = filme.GeneroID;
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)

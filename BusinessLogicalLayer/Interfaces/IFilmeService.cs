@@ -15,8 +15,8 @@ namespace BLL.Interfaces
         Response Update(Filme filme);
         Response Delete(Filme filme);
         Response Validate(Filme filme);
-        DataResponse<Genero> GetData();
-        DataResponse<Genero> GetByID(int id);
+        DataResponse<Filme> GetData();
+        DataResponse<Filme> GetByID(int id);
         DataResponse<FilmeResultSet> GetFilmes();
         DataResponse<FilmeResultSet> GetFilmesByName(string nome);
         DataResponse<FilmeResultSet> GetFilmesByGenero(int genero);
