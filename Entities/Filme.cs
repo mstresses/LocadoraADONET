@@ -12,7 +12,7 @@ namespace Entities
         public int ID { get; set; }
         public string Nome { get; set; }
         public DateTime DataLancamento { get; set; }
-        public Classificacao Classificacao { get; set; }
+        public virtual Classificacao Classificacao { get; set; }
         public int Duracao { get; set; }
         public int GeneroID { get; set; }
 
