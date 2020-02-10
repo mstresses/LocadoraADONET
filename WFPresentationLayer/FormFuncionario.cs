@@ -18,15 +18,24 @@ namespace WFPresentationLayer
         public FormFuncionario()
         {
             InitializeComponent();
-            dataGridView1.DataSource = bll.GetData().Data;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
+            DataResponse<Funcionario> response = svf.GetData();
+            if (response.Sucesso)
+            {
+                dataGridView1.DataSource = response.Data;
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
         int idFuncionarioASerAtualizadoExcluido = 0;
-        private FuncionarioService bll = new FuncionarioService();
+        FuncionarioService svf = new FuncionarioService();
+
         private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Funcionario result = (Funcionario)dataGridView1.SelectedRows[0].DataBoundItem;
-            DataResponse<Funcionario> response = bll.GetByID(result.ID);
+            DataResponse<Funcionario> response = svf.GetByID(result.ID);
             if (response.Sucesso)
             {
                 Funcionario funcionario = response.Data[0];
@@ -58,7 +67,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = svf.GetData().Data;
             }
             else
             {
@@ -90,7 +99,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Funionário atualizado com sucesso.");
-                dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = svf.GetData().Data;
             }
             else
             {
@@ -100,16 +109,21 @@ namespace WFPresentationLayer
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            Response response = new FuncionarioService().Delete(funcionario);
+            Response response = svf.Delete(idFuncionarioASerAtualizadoExcluido);
             if (response.Sucesso)
             {
                 MessageBox.Show("Funcionário demitido com sucesso!");
-                dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = svf.GetData().Data;
             }
             else
             {
                 MessageBox.Show(response.GetErrorMessage());
             }
+        }
+
+        private void FormFuncionario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -100,5 +100,10 @@ namespace WFPresentationLayer
                 MessageBox.Show("Problema com o banco de dados, contate o administrador.");
             }
         }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
