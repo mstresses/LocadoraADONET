@@ -60,7 +60,7 @@ namespace WFPresentationLayer
             if (response.Sucesso)
             {
                 MessageBox.Show("Cadastrado com sucesso!");
-                dataGridView1.DataSource = bll.GetData().Data;
+                dataGridView1.DataSource = svc.GetData().Data;
             }
             else
             {
@@ -99,6 +99,11 @@ namespace WFPresentationLayer
             {
                 MessageBox.Show("Problema com o banco de dados, contate o administrador.");
             }
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

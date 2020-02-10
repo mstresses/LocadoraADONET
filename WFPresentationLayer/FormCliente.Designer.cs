@@ -67,7 +67,7 @@
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(56, 85);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(241, 22);
             this.txtNome.TabIndex = 2;
@@ -75,7 +75,7 @@
             // txtCPF
             // 
             this.txtCPF.Location = new System.Drawing.Point(56, 172);
-            this.txtCPF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCPF.Margin = new System.Windows.Forms.Padding(4);
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(241, 22);
             this.txtCPF.TabIndex = 4;
@@ -103,7 +103,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(56, 268);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(241, 22);
             this.txtEmail.TabIndex = 6;
@@ -123,7 +123,7 @@
             this.dtpDataNascimento.CustomFormat = "dd/MM/yyyy";
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataNascimento.Location = new System.Drawing.Point(56, 346);
-            this.dtpDataNascimento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDataNascimento.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(241, 22);
             this.dtpDataNascimento.TabIndex = 8;
@@ -185,6 +185,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCliente";
             this.Text = "Cadastro de Clientes";
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -13,5 +13,7 @@ namespace BLL.Interfaces
         Response Update(Funcionario funcionario);
         Response Delete(Funcionario funcionario);
         Response Validate(Funcionario funcionario);
+        DataResponse<Funcionario> GetData();
+        DataResponse<Funcionario> GetByID(int id);
     }
 }

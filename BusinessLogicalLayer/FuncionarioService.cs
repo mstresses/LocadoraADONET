@@ -4,6 +4,7 @@ using DAO;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -46,20 +47,20 @@ namespace BLL
             return response;
         }
 
-        public Response Delete(Funcionario funcionario)
+        public Response Delete(int id)
         {
             Response response = new Response();
             using (LocadoraDbContext db = new LocadoraDbContext())
             {
-                Funcionario funcASerExcluido = new Funcionario();
+                Funcionario funcASerExcluido = db.Funcionarios.Find(id);
                 db.Entry<Funcionario>(funcASerExcluido).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
             }
-            if (funcionario.ID <= 0)
+            if (id <= 0)
             {
                 response.Erros.Add("ID do cliente não foi informado.");
             }
-            if (response.Erros.Count != 0)
+            else if  (response.Erros.Count != 0)
             {
                 response.Sucesso = false;
                 return response;
@@ -97,6 +98,38 @@ namespace BLL
                 db.SaveChanges();
                 return response;
             }
+        }
+
+        public DataResponse<Funcionario> GetData()
+        {
+            using (LocadoraDbContext db = new LocadoraDbContext())
+            {
+                DataResponse<Funcionario
+                    > response = new DataResponse<Funcionario>();
+                try
+                {
+                    response.Data = db.Funcionarios.ToList();
+                    response.Sucesso = true;
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    File.WriteAllText("log.txt", ex.Message);
+                    response.Sucesso = false;
+                    response.Erros.Add("Erro no banco de dados, contate o adm.");
+                    return response;
+                }
+            }
+        }
+
+        public DataResponse<Funcionario> GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Response Delete(Funcionario funcionario)
+        {
+            throw new NotImplementedException();
         }
     }
 }
