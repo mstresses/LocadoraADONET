@@ -12,7 +12,7 @@ namespace BLL
 {
     public class GeneroService : IGeneroService
     {
-        private LocadoraDbContext dao = new LocadoraDbContext();
+        private LocadoraDbContext dal = new LocadoraDbContext();
         public Response Insert(Genero genero)
         {
             Response response = Validate(genero);
@@ -74,7 +74,7 @@ namespace BLL
             {
                 if (string.IsNullOrWhiteSpace(genero.Nome))
                 {
-                    new Exception("O nome do gênero deve ser informado");
+                    response.Erros.Add("O nome do gênero deve ser informado");
                 }
                 else
                 {
@@ -84,17 +84,12 @@ namespace BLL
                     genero.Nome = Regex.Replace(genero.Nome, @"\s+", " ");
                     if (genero.Nome.Length < 2 || genero.Nome.Length > 50)
                     {
-                        new Exception("O nome do gênero deve conter entre 2 e 50 caracteres");
+                        response.Erros.Add("O nome do gênero deve conter entre 2 e 50 caracteres");
                     }
                 }
                 db.SaveChanges();
                 return response;
             }
-        }
-
-        public DataResponse<Genero> GetData()
-        {
-            throw new Exception();
         }
     }
 }

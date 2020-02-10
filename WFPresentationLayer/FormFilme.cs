@@ -42,7 +42,15 @@ namespace WFPresentationLayer
             filme.Nome = txtNome.Text;
             filme.DataLancamento = dtpLancamento.Value;
             filme.GeneroID = (int)cmbGeneros.SelectedValue;
-            new FilmeService().Insert(filme);
+            Response response = new FilmeService().Insert(filme);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Filme cadastrado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
 
         private void cmbFIltro_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,13 +88,25 @@ namespace WFPresentationLayer
             filme.Nome = txtNome.Text;
             filme.DataLancamento = dtpLancamento.Value;
             filme.GeneroID = (int)cmbGeneros.SelectedValue;
-            new FilmeService().Update(filme);
+            Response response = new FilmeService().Update(filme);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Filme cadastrado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show(response.GetErrorMessage());
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             Filme filme = new Filme();
-            new FilmeService().Delete(filme);
+            Response response = new FilmeService().Delete(filme);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Excluído com sucesso.");
+            }
         }
     }
 }

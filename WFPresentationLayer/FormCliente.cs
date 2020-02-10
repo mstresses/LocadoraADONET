@@ -36,8 +36,16 @@ namespace WFPresentationLayer
             cliente.Email = txtEmail.Text;
             cliente.DataNascimento = dtpDataNascimento.Value;
             new ClienteService().Insert(cliente);
-            MessageBox.Show("Cliente cadastrado com sucesso!");
-            //dataGridView1.DataSource = .GetData().Data;
+            Response response = new ClienteService().Insert(cliente);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Cadastrado com sucesso!");
+                //dataGridView1.DataSource = bll.GetData().Data;
+            }
+            else
+            {
+                MessageBox.Show("Problema no banco de dados, contate o administrador");
+            }
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
@@ -48,13 +56,29 @@ namespace WFPresentationLayer
             cliente.Email = txtEmail.Text;
             cliente.CPF = txtCPF.Text;
             cliente.DataNascimento = dtpDataNascimento.Value;
-            new ClienteService().Update(cliente);
+            Response response = new ClienteService().Update(cliente);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Atualizado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Problema no banco de dados, contate o administrador");
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             Cliente cliente = new Cliente();
-            new ClienteService().Delete(cliente);
+            Response response = new ClienteService().Delete(cliente);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Excluído com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Problema com o banco de dados, contate o administrador.");
+            }
         }
     }
 }

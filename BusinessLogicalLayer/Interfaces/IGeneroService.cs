@@ -13,6 +13,6 @@ namespace BLL.Interfaces
         Response Update(Genero genero);
         Response Delete(Genero genero);
         Response Validate(Genero genero);
-        DataResponse<Genero> GetData();
+        //DataResponse<Genero> GetData();
     }
 }

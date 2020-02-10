@@ -19,7 +19,7 @@ namespace WFPresentationLayer
         public FormGenero()
         {
             InitializeComponent();
-            dataGridView1.DataSource = bll.GetData().Data;
+            //dataGridView1.DataSource = bll.GetData().Data;
             dataGridView1.CellDoubleClick += DataGridView1_CellDoubleClick;
         }
 
@@ -33,8 +33,6 @@ namespace WFPresentationLayer
         {
             Genero genero = new Genero();
             genero.Nome = txtGenero.Text;
-            new GeneroService().Insert(genero);
-
             Response response = new GeneroService().Insert(genero);
             if (response.Sucesso)
             {
@@ -43,7 +41,7 @@ namespace WFPresentationLayer
             }
             else
             {
-                MessageBox.Show(response.GetErrorMessage());
+                MessageBox.Show("Problema no banco de dados, contate o administrador");
             }
         }
 
@@ -51,13 +49,29 @@ namespace WFPresentationLayer
         {
             Genero genero = new Genero();
             genero.Nome = txtGenero.Text;
-            new GeneroService().Update(genero);
+            Response response = new GeneroService().Update(genero);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Atualizado com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Problema no banco de dados, contate o administrador");
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             Genero genero = new Genero();
-            new GeneroService().Delete(genero);
+            Response response = new GeneroService().Delete(genero);
+            if (response.Sucesso)
+            {
+                MessageBox.Show("Excluído com sucesso.");
+            }
+            else
+            {
+                MessageBox.Show("Problema no banco de dados, contate o administrador");
+            }
         }
     }
 }
